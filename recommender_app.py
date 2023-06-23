@@ -24,15 +24,15 @@ import dill
 def predict_sentiment(com):
     com = tfidf.transform([com])
     pred = model.predict(com)
-    print(pred[0])
-    if pred[0] == 0 : return "negative"
-    else : return "positive"
+    pred_proba = model.predict_proba(com)
+    if pred[0] == 0 : return "negative (predicted proba = " + str(pred_proba[0][0]) + ")"
+    else : return "positive (predicted proba = " + str(pred_proba[0][1]) + ")"
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights_path', type=str,
                         default="data/rf_model.joblib", help="weights path")
-    parser.add_argument('--vetorizer_path', type=str,
+    parser.add_argument('--vectorizer_path', type=str,
                         default="data/vectorizer.joblib", help="vectorizer path")
     args = parser.parse_args()
 
