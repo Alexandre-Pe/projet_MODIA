@@ -31,7 +31,7 @@ if __name__=='__main__':
     parser.add_argument('--test_path', type=str, default='test_script.csv', help='Path to a test file')
     args = parser.parse_args()
 
-    interactions_train = pd.read_csv("data/interactions_train.csv")
+    interactions_train = pd.concat([pd.read_csv("data/interactions_train.csv"), pd.read_csv("data/interactions_test.csv")])
     interactions_test = pd.read_csv(args.test_path)
     testloader = DataLoader(Ratings_Dataset(interactions_test), batch_size=64, num_workers=2)
 
