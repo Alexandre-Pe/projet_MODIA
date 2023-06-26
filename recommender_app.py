@@ -31,9 +31,9 @@ def predict_sentiment(com):
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights_path', type=str,
-                        default="data/rf_model.joblib", help="weights path")
+                        default="rf_model.joblib", help="weights path")
     parser.add_argument('--vectorizer_path', type=str,
-                        default="data/vectorizer.joblib", help="vectorizer path")
+                        default="vectorizer.joblib", help="vectorizer path")
     args = parser.parse_args()
 
     model = joblib.load(args.weights_path)
