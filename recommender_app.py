@@ -47,8 +47,8 @@ class StemTokenizer:
 def predict_sentiment(com):
     pred = model.predict([com])
     pred_proba = model.predict_proba([com])
-    if pred == "negative" : return pred + "(predicted proba = "+ str(pred_proba[0][0]) + ")"
-    else : return pred + "(predicted proba = "+ str(pred_proba[0][1]) + ")"
+    if pred == "negative" : return pred[0] + " (predicted proba = "+ str(pred_proba[0][0]) + ")"
+    else : return pred[0] + " (predicted proba = "+ str(pred_proba[0][1]) + ")" 
 
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
