@@ -53,6 +53,16 @@ Pour le livrable:
 * Faites moi un pull request sur GitHub et envoyez moi un mail à david.bertoin@irt-saintexupery.com pour que je vérifie que tout est OK.
 * __Bonus__: Si vous avez fait le dockerfile, rajoutez dans le readme les commandes à exécuter pour le tester.
 
+### Partie 5 Docker
+Pour build le docker faire la commande suivante dans le dossier du Dockerfile:
+`docker build . -t gradio_app:latest`
+Pour exécuter le gradio:
+`docker run --rm -it -p 127.0.0.1:7860:7860 gradio_app:latest recommender_app.py`
+L'application devrait être sur l'adresse `http://127.0.0.1:7860` en local. Si ça ne marche pas, utiliser l'adresse fourni par gradio.
+Pour exécuter le script:
+`docker run --rm -it gradio_app:latest main.py`
+On peut passer les mêmes arguments qu'aux lignes de commande en standalone.
+
 <a name="myfootnote1">1</a>: Les données ont été récoltées  pour l'article suivant:  
  [Generating Personalized Recipes from Historical User Preferences
 Bodhisattwa Prasad Majumder*, Shuyang Li*, Jianmo Ni, Julian McAuley
