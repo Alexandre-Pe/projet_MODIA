@@ -1,5 +1,7 @@
 # Projet MODIA 2022
 
+**Groupe : Joanne Couallier, Minh Ha Ho, Alexandre Personnic, Huimin Zhang**
+
 Dans ce projet, vous allez travailler sur des données<sup>[1](#myfootnote1)</sup>issues du site [Food.com](https://www.food.com/), un célèbre site de recettes de cuisine.   
 ![](img/food.png)
 Les données, disponibles [ici](https://drive.google.com/drive/folders/18JyoxTIrIH2s2wG6HtxGiKsdFtGSfUWm?usp=sharing), contiennent des informations sur des recettes de cuisines ainsi que des interactions de plusieurs utilisateurs avec les recettes.   
@@ -53,7 +55,10 @@ Pour le livrable:
 * Faites moi un pull request sur GitHub et envoyez moi un mail à david.bertoin@irt-saintexupery.com pour que je vérifie que tout est OK.
 * __Bonus__: Si vous avez fait le dockerfile, rajoutez dans le readme les commandes à exécuter pour le tester.
 
-### Partie 5 Docker
+Commande pour lancer le script ```main.py``` : `python main.py --weights_path weight.pth --test_path test_script.csv` 
+On peut aussi directement lancer la commande `python main.py` si les noms des arguments sont exactement les mêmes que ci-dessus (noms par défaut). 
+
+### Partie 5: Docker
 Pour build le docker faire la commande suivante dans le dossier du Dockerfile:
 `docker build . -t gradio_app:latest`
 Pour exécuter le gradio:
