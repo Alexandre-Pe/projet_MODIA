@@ -61,12 +61,15 @@ On peut aussi directement lancer la commande `python main.py` si les noms des ar
 ### Partie 5: Docker
 Pour build le docker faire la commande suivante dans le dossier du Dockerfile:
 `docker build . -t gradio_app:latest`
+
 Pour exécuter le gradio:
 `docker run --rm -it -p 127.0.0.1:7860:7860 gradio_app:latest recommender_app.py`
 L'application devrait être sur l'adresse `http://127.0.0.1:7860` en local. Si ça ne marche pas, utiliser l'adresse fourni par gradio.
+
 Pour exécuter le script:
 `docker run --rm -it gradio_app:latest main.py`
-On peut passer les mêmes arguments qu'aux lignes de commande en standalone.
+
+On peut passer les mêmes arguments qu'aux lignes de commande en standalone mais si on veux d'autres fichiers en entrée il faut les inclure dans le docker.
 
 <a name="myfootnote1">1</a>: Les données ont été récoltées  pour l'article suivant:  
  [Generating Personalized Recipes from Historical User Preferences
